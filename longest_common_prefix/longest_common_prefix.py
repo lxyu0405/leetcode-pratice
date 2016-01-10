@@ -9,11 +9,10 @@ class Solution(object):
             
         common_prefix = strs[0]
         for s in strs[1:]:
-            n_pre = len(common_prefix)
-            n_s = len(s)
-            max = n_pre if n_pre <= n_s else n_s
+            #n_pre, n_s = len(common_prefix), len(s)
+            max = len(common_prefix) if len(common_prefix) <= len(s) else len(s)
             temp = ''
-            for i in range(n_s):
+            for i in range(len(s)):
                 if i < max and s[i] == common_prefix[i]:
                     temp += s[i]
                 else:
